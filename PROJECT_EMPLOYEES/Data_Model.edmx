@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_employeesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="identification_card" />
+          </Key>
+          <Property Name="identification_card" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+          <Property Name="last_name" Type="text" Nullable="false" />
+          <Property Name="adress" Type="text" Nullable="false" />
+          <Property Name="email" Type="text" />
+          <Property Name="phone" Type="text" />
+          <Property Name="contract_date_from" Type="datetime" Nullable="false" />
+          <Property Name="contract_date_util" Type="datetime" Nullable="false" />
+          <Property Name="date_of_birth" Type="text" />
+          <Property Name="freelace" Type="bit" />
+          <Property Name="hourly_rate" Type="money" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="last_name" />
+            <PropertyRef Name="user_na" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="name" Type="text" Nullable="false" />
+          <Property Name="last_name" Type="text" Nullable="false" />
+          <Property Name="user_na" Type="text" Nullable="false" />
+          <Property Name="password" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="db_employeesModelStoreContainer">
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [users].[name] AS [name], 
+    [users].[last_name] AS [last_name], 
+    [users].[user_na] AS [user_na], 
+    [users].[password] AS [password]
+    FROM [dbo].[users] AS [users]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_employeesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="identification_card" />
+          </Key>
+          <Property Name="identification_card" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contract_date_from" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="contract_date_util" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date_of_birth" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="freelace" Type="Boolean" />
+          <Property Name="hourly_rate" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="last_name" />
+            <PropertyRef Name="user_na" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_na" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="db_employeesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="users" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_employeesModelStoreContainer" CdmEntityContainer="db_employeesEntities">
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="db_employeesModel.employee">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="identification_card" ColumnName="identification_card" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="contract_date_from" ColumnName="contract_date_from" />
+                <ScalarProperty Name="contract_date_util" ColumnName="contract_date_util" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="freelace" ColumnName="freelace" />
+                <ScalarProperty Name="hourly_rate" ColumnName="hourly_rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="db_employeesModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="user_na" ColumnName="user_na" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
