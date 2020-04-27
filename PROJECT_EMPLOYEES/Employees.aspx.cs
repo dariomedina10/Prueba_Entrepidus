@@ -87,10 +87,10 @@ namespace PROJECT_EMPLOYEES
 
             Label1.Text = "";
             Label1.Text = "Welcome" + "   " + Session["user"];
-            id.Text = "";
-            id.Text = "V-";
+            //id.Text = "";
+            //id.Text = "V-";
             TextBox3.Text = "";
-            TextBox3.Text = "1234-";
+            //TextBox3.Text = "1234-";
           
         }
 
