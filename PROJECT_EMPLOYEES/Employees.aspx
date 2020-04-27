@@ -28,27 +28,13 @@
 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
 <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
     media="screen" />
-        media="screen" />
-    <!-- Bootstrap -->
-   
-    <!-- Bootstrap DatePicker -->
-    <script type="text/javascript">
-        $(function () {
-            $('[id*=txtDate]').datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "dd/mm/yyyy",
-                language: "tr"
-            });
-        });
-    </script>
-
+        
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <center>
-          <h2> <asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label></h2> <a href="index.aspx" >Logout System</a>   <a href="Users.aspx" >Add Administrator</a> <br />
+    <body>
+        <form id="form1" runat="server">
+            <div>
+                <center>
+                    <h2> <asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label></h2> <a href="index.aspx" >Logout System</a>   <a href="Users.aspx" >Add Administrator</a> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.aspx" ><asp:Label ID="Label3" runat="server" ForeColor="#000099" Text="Label"></asp:Label>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="index.aspx" >
