@@ -248,6 +248,9 @@ if (typeof jQuery === 'undefined') {
   // BUTTON PLUGIN DEFINITION
   // ========================
 
+
+
+
   function Plugin(option) {
     return this.each(function () {
       var $this   = $(this)

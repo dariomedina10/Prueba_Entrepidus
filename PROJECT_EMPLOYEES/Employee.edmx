@@ -16,7 +16,6 @@
           <Property Name="email" Type="text" />
           <Property Name="phone" Type="text" />
           <Property Name="contract_date_from" Type="datetime" Nullable="false" />
-          <Property Name="contract_date_util" Type="datetime" Nullable="false" />
           <Property Name="date_of_birth" Type="text" />
           <Property Name="freelace" Type="bit" />
           <Property Name="hourly_rate" Type="money" />
@@ -51,7 +50,7 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="db_employeesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="employee">
+        <EntityType Name="employees">
           <Key>
             <PropertyRef Name="identification_card" />
           </Key>
@@ -62,12 +61,11 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
           <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="contract_date_from" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="contract_date_util" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="date_of_birth" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="freelace" Type="Boolean" />
           <Property Name="hourly_rate" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="user">
+        <EntityType Name="users">
           <Key>
             <PropertyRef Name="name" />
             <PropertyRef Name="last_name" />
@@ -79,18 +77,18 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
           <Property Name="user_na" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="db_employeesEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="employees" EntityType="Self.employee" />
-          <EntitySet Name="users" EntityType="Self.user" />
+        <EntityContainer Name="db_employeesEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employees" EntityType="Self.employees" />
+          <EntitySet Name="users" EntityType="Self.users" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="db_employeesModelStoreContainer" CdmEntityContainer="db_employeesEntities">
+        <EntityContainerMapping StorageEntityContainer="db_employeesModelStoreContainer" CdmEntityContainer="db_employeesEntities1">
           <EntitySetMapping Name="employees">
-            <EntityTypeMapping TypeName="db_employeesModel.employee">
+            <EntityTypeMapping TypeName="db_employeesModel.employees">
               <MappingFragment StoreEntitySet="employees">
                 <ScalarProperty Name="identification_card" ColumnName="identification_card" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -99,7 +97,6 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="contract_date_from" ColumnName="contract_date_from" />
-                <ScalarProperty Name="contract_date_util" ColumnName="contract_date_util" />
                 <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
                 <ScalarProperty Name="freelace" ColumnName="freelace" />
                 <ScalarProperty Name="hourly_rate" ColumnName="hourly_rate" />
@@ -107,7 +104,7 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="db_employeesModel.user">
+            <EntityTypeMapping TypeName="db_employeesModel.users">
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />
@@ -130,7 +127,7 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

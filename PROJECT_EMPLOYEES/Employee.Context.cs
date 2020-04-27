@@ -13,10 +13,10 @@ namespace PROJECT_EMPLOYEES
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_employeesEntities : DbContext
+    public partial class db_employeesEntities1 : DbContext
     {
-        public db_employeesEntities()
-            : base("name=db_employeesEntities")
+        public db_employeesEntities1()
+            : base("name=db_employeesEntities1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace PROJECT_EMPLOYEES
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<employee> employees { get; set; }
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<employees> employees { get; set; }
+        public virtual DbSet<users> users { get; set; }
     }
 }
