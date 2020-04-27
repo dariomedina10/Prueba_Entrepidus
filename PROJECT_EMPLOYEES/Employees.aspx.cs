@@ -21,7 +21,7 @@ namespace PROJECT_EMPLOYEES
             //Assuming user comes back after several hours. several < 12.
             //Read the cookie from Request.
             HttpCookie myCookie = Request.Cookies["myCookie"];
-            if (myCookie == null)
+            if ((myCookie == null) && (Session["user"]==null))
             {
                 Response.Redirect("index.aspx");
                 //No cookie found or cookie expired.
