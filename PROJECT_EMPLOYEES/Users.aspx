@@ -28,7 +28,7 @@
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Last_Name" ErrorMessage="You must enter the last name" ForeColor="#CC0000"></asp:RequiredFieldValidator>   
                                  <td><asp:TextBox ID="Last_Name" placeholder="enter here employee name" CssClass="form-control" runat="server" Width="220" TabIndex="1" ></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="nick" ErrorMessage="You must enter nick" ForeColor="#CC0000"></asp:RequiredFieldValidator>   
-                                 <td><asp:TextBox ID="nick" placeholder="enter here  Last name" CssClass="form-control" runat="server" Width="150px" TabIndex="1" OnTextChanged="nick_TextChanged" ></asp:TextBox>
+                                 <td><asp:TextBox ID="nick" placeholder="enter here  Last name" CssClass="form-control" runat="server" Width="150px" TabIndex="1"></asp:TextBox>
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="nick" ErrorMessage="You must enter password" ForeColor="#CC0000"></asp:RequiredFieldValidator>   
                                  <br />
 <asp:TextBox ID="pass" type="password" placeholder="enter  password please" CssClass="form-control" runat="server" Width="150px"></asp:TextBox>
