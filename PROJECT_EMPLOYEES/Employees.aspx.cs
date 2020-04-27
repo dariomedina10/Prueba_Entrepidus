@@ -20,21 +20,21 @@ namespace PROJECT_EMPLOYEES
 
             //Assuming user comes back after several hours. several < 12.
             //Read the cookie from Request.
-            HttpCookie myCookie = Request.Cookies["myCookie"];
-            if ((myCookie == null) && (Session["user"]==null))
-            {
-                Response.Redirect("index.aspx");
-                //No cookie found or cookie expired.
-                //Handle the situation here, Redirect the user or simply return;
-            }
+            //HttpCookie myCookie = Request.Cookies["myCookie"];
+            //if ((myCookie == null) && (Session["user"]==null))
+            //{
+            //    Response.Redirect("index.aspx");
+            //    //No cookie found or cookie expired.
+            //    //Handle the situation here, Redirect the user or simply return;
+            //}
 
-            //ok - cookie is found.
-            //Gracefully check if the cookie has the key-value as expected.
-            if (string.IsNullOrEmpty(myCookie.Values["userid"]))
-            {
-                string userId = myCookie.Values["userid"].ToString();
-                Response.Redirect("Employees.aspx");
-            }
+            ////ok - cookie is found.
+            ////Gracefully check if the cookie has the key-value as expected.
+            //if (!string.IsNullOrEmpty(myCookie.Values["userid"]))
+            //{
+            //    string userId = myCookie.Values["userid"].ToString();
+            //    Response.Redirect("Employees.aspx");
+            //}
 
 
             if (!IsPostback) 
