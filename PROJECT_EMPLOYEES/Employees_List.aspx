@@ -8,8 +8,15 @@
     <title>List of Employees</title>
 </head>
 <body>
+    
     <form id="form1" runat="server">
         <div>
+
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="5">
+                <Columns>
+                    <asp:CommandField ShowEditButton="True" />
+                </Columns>
+            </asp:GridView>
         </div>
     </form>
 </body>
