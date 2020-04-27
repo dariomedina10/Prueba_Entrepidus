@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
        <script src="Scripts/bootstrap.min.js"></script>
-
+    
     <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
 
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
