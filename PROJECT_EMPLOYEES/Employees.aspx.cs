@@ -23,7 +23,7 @@ namespace PROJECT_EMPLOYEES
                 //id.Text = "V-";
                 //TextBox3.Text = "1234-";
                 Label2.Visible = false;
-                Label3.Visible = false;
+             
                 //TextBox3.Visible = false;
                   }
         }
@@ -60,7 +60,7 @@ namespace PROJECT_EMPLOYEES
                 hourly_rate = Convert.ToDecimal (TextBox5.Text)
             };
 
-             using (db_employeesEntities1 db = new db_employeesEntities1())
+             using (db_employeesEntities2 db = new db_employeesEntities2())
             {
                 //    // Add employees to DbSet
                 db.employees.Add(emp);
@@ -74,8 +74,9 @@ namespace PROJECT_EMPLOYEES
             try
             {
                   Add_Employees();
-                    Limpiar();
-                    Label3.Visible = false;
+                db.SaveChanges();
+                Limpiar();
+                   // Label2.Visible = false;
             }
 
             catch (Exception ex)
@@ -83,9 +84,6 @@ namespace PROJECT_EMPLOYEES
                 Label1.Visible = true;
                 Label1.Text = "Have problems adding employees" + ex.Message;
             }
-
-
-
 
             Label1.Text = "";
             Label1.Text = "Welcome" + "   " + Session["user"];

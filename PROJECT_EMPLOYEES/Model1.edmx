@@ -20,30 +20,18 @@
           <Property Name="freelace" Type="bit" />
           <Property Name="hourly_rate" Type="money" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="users">
           <Key>
-            <PropertyRef Name="name" />
-            <PropertyRef Name="last_name" />
             <PropertyRef Name="user_na" />
-            <PropertyRef Name="password" />
           </Key>
+          <Property Name="user_na" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="text" Nullable="false" />
           <Property Name="name" Type="text" Nullable="false" />
           <Property Name="last_name" Type="text" Nullable="false" />
-          <Property Name="user_na" Type="text" Nullable="false" />
-          <Property Name="password" Type="text" Nullable="false" />
         </EntityType>
         <EntityContainer Name="db_employeesModelStoreContainer">
           <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="users" EntityType="Self.users" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [users].[name] AS [name], 
-    [users].[last_name] AS [last_name], 
-    [users].[user_na] AS [user_na], 
-    [users].[password] AS [password]
-    FROM [dbo].[users] AS [users]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -67,17 +55,14 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
         </EntityType>
         <EntityType Name="users">
           <Key>
-            <PropertyRef Name="name" />
-            <PropertyRef Name="last_name" />
             <PropertyRef Name="user_na" />
-            <PropertyRef Name="password" />
           </Key>
+          <Property Name="user_na" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="last_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="user_na" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="db_employeesEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="db_employeesEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="employees" EntityType="Self.employees" />
           <EntitySet Name="users" EntityType="Self.users" />
         </EntityContainer>
@@ -86,7 +71,7 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="db_employeesModelStoreContainer" CdmEntityContainer="db_employeesEntities1">
+        <EntityContainerMapping StorageEntityContainer="db_employeesModelStoreContainer" CdmEntityContainer="db_employeesEntities2">
           <EntitySetMapping Name="employees">
             <EntityTypeMapping TypeName="db_employeesModel.employees">
               <MappingFragment StoreEntitySet="employees">
@@ -106,10 +91,10 @@ advertencia 6002: La tabla o vista 'db_employees.dbo.users' no tiene definida ni
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="db_employeesModel.users">
               <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="last_name" ColumnName="last_name" />
                 <ScalarProperty Name="user_na" ColumnName="user_na" />
                 <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

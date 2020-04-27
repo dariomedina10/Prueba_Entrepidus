@@ -20,7 +20,7 @@ namespace PROJECT_EMPLOYEES
                 Label1.Text = Label1.Text + "   " + Session["user"];
                 Label2.Visible = false;
 
-            }
+             }
         }
 
 
@@ -29,21 +29,22 @@ namespace PROJECT_EMPLOYEES
             // crear objetos del tipo Articulo
             var usu = new users()
             {
-                name = name.Text,
-                last_name = Last_Name.Text,
                 user_na = nick.Text,
-                password = nick.Text
-             
-             
+                password = nick.Text,
+                name = name.Text,
+                last_name = Last_Name.Text
+               
+              
             };
 
-            using (db_employeesEntities1 db = new db_employeesEntities1())
+            using (db_employeesEntities2 db = new db_employeesEntities2())
             {
                 //    // Add employees to DbSet
                 db.users.Add(usu);
                 db.SaveChanges();
                 Label2.Visible = true;
                 Label2.Text = "!!!Successfull Record!!!";
+                Limpiar();
             }
         }
 
@@ -61,15 +62,19 @@ namespace PROJECT_EMPLOYEES
             try
             {
                 Add_Users();
+                db.SaveChanges();
                 Limpiar();
-                Label2.Visible = false;
+            
             }
 
             catch (Exception ex)
             {
-                Label1.Visible = true;
-                Label1.Text = "Have problems adding user" + ex.Message;
+                Label4.Visible = true;
+                Label4.Text = "Have problems adding user" + ex.Message;
             }
+
+            Label1.Text = "";
+            Label1.Text = "Welcome" + "   " + Session["user"];
         }
     }
 }

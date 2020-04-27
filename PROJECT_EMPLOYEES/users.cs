@@ -14,9 +14,9 @@ namespace PROJECT_EMPLOYEES
     
     public partial class users
     {
-        public string name { get; set; }
-        public string last_name { get; set; }
         public string user_na { get; set; }
         public string password { get; set; }
+        public string name { get; set; }
+        public string last_name { get; set; }
     }
 }

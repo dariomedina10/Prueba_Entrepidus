@@ -13,10 +13,10 @@ namespace PROJECT_EMPLOYEES
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_employeesEntities1 : DbContext
+    public partial class db_employeesEntities2 : DbContext
     {
-        public db_employeesEntities1()
-            : base("name=db_employeesEntities1")
+        public db_employeesEntities2()
+            : base("name=db_employeesEntities2")
         {
         }
     

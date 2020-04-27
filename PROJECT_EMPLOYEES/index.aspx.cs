@@ -30,7 +30,7 @@ namespace PROJECT_EMPLOYEES
             try
             {
 
-                using (db_employeesEntities1 db = new db_employeesEntities1())
+                using (db_employeesEntities2 db = new db_employeesEntities2())
             {
                 int j = 0;
                 var query1 = from a in db.users
