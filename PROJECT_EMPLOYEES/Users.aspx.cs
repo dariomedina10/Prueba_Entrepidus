@@ -13,5 +13,10 @@ namespace PROJECT_EMPLOYEES
         {
 
         }
+
+        protected void nick_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
