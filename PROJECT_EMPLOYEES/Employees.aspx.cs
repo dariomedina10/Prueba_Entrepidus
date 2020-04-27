@@ -73,18 +73,9 @@ namespace PROJECT_EMPLOYEES
         {
             try
             {
-                if (id.Text != "V-"){ 
-
                   Add_Employees();
-                 
-                  Limpiar();
+                    Limpiar();
                     Label3.Visible = false;
-                } else
-                {
-                    Label3.Visible = true;
-                    Label3.Text = "You must entered identification card Please";
-                }
-
             }
 
             catch (Exception ex)

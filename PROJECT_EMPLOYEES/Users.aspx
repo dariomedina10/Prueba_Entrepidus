@@ -17,7 +17,12 @@
                 <div class="form-row">
                         <div class="form-group col-md-6">
                             <center>
-                                  <h2> <asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label></h2> <a href="index.aspx" >Logout System</a>   <a href="Employees.aspx" >Volver Atras</a> <br />
+                                  <h2> <asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label></h2> <a href="index.aspx" >Logout System</a>   <a href="Employees.aspx" >Volver Atras</a>
+                                  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="index.aspx" >
+                <asp:Label ID="Label2" runat="server" ForeColor="#000099" Text="Label"></asp:Label>
+                </a>
+                                  <br />
                                 <%-- <p align="center">
                          <strong>Indentification Card</strong>
                         </p>--%>
@@ -33,6 +38,8 @@
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="nick" ErrorMessage="You must enter password" ForeColor="#CC0000"></asp:RequiredFieldValidator>   
                                  <br />
 <asp:TextBox ID="pass" type="password" placeholder="enter  password please" CssClass="form-control" runat="server" Width="150px"></asp:TextBox>
+                                     <br />
+                                     <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="Button1_Click" />
             </center>
         </div>
     </form>

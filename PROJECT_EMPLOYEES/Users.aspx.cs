@@ -18,11 +18,58 @@ namespace PROJECT_EMPLOYEES
             {
 
                 Label1.Text = Label1.Text + "   " + Session["user"];
-               
-               
+                Label2.Visible = false;
+
             }
         }
 
-       
+
+        void Add_Users()
+        {
+            // crear objetos del tipo Articulo
+            var usu = new users()
+            {
+                name = name.Text,
+                last_name = Last_Name.Text,
+                user_na = nick.Text,
+                password = nick.Text
+             
+             
+            };
+
+            using (db_employeesEntities1 db = new db_employeesEntities1())
+            {
+                //    // Add employees to DbSet
+                db.users.Add(usu);
+                db.SaveChanges();
+                Label2.Visible = true;
+                Label2.Text = "!!!Successfull Record!!!";
+            }
+        }
+
+        public void Limpiar()
+        {
+            name.Text = "";
+            Last_Name.Text = "";
+            nick.Text = "";
+            pass.Text = "";
+        }
+
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Add_Users();
+                Limpiar();
+                Label2.Visible = false;
+            }
+
+            catch (Exception ex)
+            {
+                Label1.Visible = true;
+                Label1.Text = "Have problems adding user" + ex.Message;
+            }
+        }
     }
 }
