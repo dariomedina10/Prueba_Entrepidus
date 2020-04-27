@@ -89,8 +89,6 @@ namespace PROJECT_EMPLOYEES
             Label1.Text = "Welcome" + "   " + Session["user"];
              TextBox3.Text = "";
         }
-
-
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Write("hola");
