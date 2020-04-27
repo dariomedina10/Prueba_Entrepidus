@@ -40,7 +40,9 @@ namespace PROJECT_EMPLOYEES
                     {   //implement session user with username
                         Session["user"] = nick.Text; 
                         Response.Redirect("Employees.aspx");
-                        
+
+
+
                         //create a cookie
                         HttpCookie myCookie = new HttpCookie("myCookie");
 
@@ -80,6 +82,11 @@ namespace PROJECT_EMPLOYEES
         }
 
         protected void Button2_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
