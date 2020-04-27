@@ -5,14 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>REcord Of Employees</title>
        <script src="Scripts/bootstrap.min.js"></script>
     
     <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
 
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
 
-    <script src="Scripts/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+   
 
     <script src="Scripts/bootstrap-datetimepicker.pt-BR.js" type="text/javascript"></script>
 

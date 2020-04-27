@@ -25,7 +25,7 @@ namespace PROJECT_EMPLOYEES
                 Label2.Visible = false;
                 Label3.Visible = false;
                 //TextBox3.Visible = false;
-            }
+                  }
         }
 
         protected void Radio1_CheckedChanged(object sender, EventArgs e)
