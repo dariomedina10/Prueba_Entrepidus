@@ -30,7 +30,7 @@ namespace PROJECT_EMPLOYEES
 
             //ok - cookie is found.
             //Gracefully check if the cookie has the key-value as expected.
-            if (!string.IsNullOrEmpty(myCookie.Values["userid"]))
+            if (string.IsNullOrEmpty(myCookie.Values["userid"]))
             {
                 string userId = myCookie.Values["userid"].ToString();
                 Response.Redirect("Employees.aspx");
