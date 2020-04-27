@@ -7,6 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Record Administrators Users</title>
      <script src="Scripts/bootstrap.min.js"></script>
+     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
