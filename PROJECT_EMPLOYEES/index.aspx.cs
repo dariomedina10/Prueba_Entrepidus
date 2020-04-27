@@ -43,17 +43,17 @@ namespace PROJECT_EMPLOYEES
 
 
 
-                        //create a cookie
-                        HttpCookie myCookie = new HttpCookie("myCookie");
+                        ////create a cookie
+                        //HttpCookie myCookie = new HttpCookie("myCookie");
 
-                        //Add key-values in the cookie
-                        myCookie.Values.Add("userid", nick.Text);
+                        ////Add key-values in the cookie
+                        //myCookie.Values.Add("userid", nick.Text);
 
-                        //set cookie expiry date-time. Made it to last for next 12 hours.
-                        myCookie.Expires = DateTime.Now.AddHours(12);
+                        ////set cookie expiry date-time. Made it to last for next 12 hours.
+                        //myCookie.Expires = DateTime.Now.AddHours(12);
 
-                        //Most important, write the cookie to client.
-                        Response.Cookies.Add(myCookie);
+                        ////Most important, write the cookie to client.
+                        //Response.Cookies.Add(myCookie);
 
                         j = 1;
                     }

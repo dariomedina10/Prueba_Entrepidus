@@ -91,7 +91,7 @@ namespace PROJECT_EMPLOYEES
             {
                   Add_Employees();
                 db.SaveChanges();
-                Limpiar();
+                Clean();
                    // Label2.Visible = false;
             }
 
@@ -112,7 +112,7 @@ namespace PROJECT_EMPLOYEES
 
 
 
-        public void Limpiar()
+        public void Clean()
         {
            id.Text = "";
            TextBox7.Text = "";
@@ -129,7 +129,7 @@ namespace PROJECT_EMPLOYEES
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
-            Limpiar();
+            Clean();
         }
 
         protected void id_TextChanged(object sender, EventArgs e)

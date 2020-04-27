@@ -46,11 +46,11 @@ namespace PROJECT_EMPLOYEES
                 Label2.Visible = true;
                 Label2.Text = "!!!Successfull Record!!!";
                 Label4.Text = "";
-                Limpiar();
+                Clean();
             }
         }
 
-        public void Limpiar()
+        public void Clean()
         {
             name.Text = "";
             Last_Name.Text = "";
@@ -65,7 +65,7 @@ namespace PROJECT_EMPLOYEES
             {
                 Add_Users();
                 db.SaveChanges();
-                Limpiar();
+                Clean();
             
             }
 
