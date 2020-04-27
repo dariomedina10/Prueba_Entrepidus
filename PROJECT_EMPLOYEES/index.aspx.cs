@@ -40,8 +40,19 @@ namespace PROJECT_EMPLOYEES
                     {   //implement session user with username
                         Session["user"] = nick.Text; 
                         Response.Redirect("Employees.aspx");
-                      //  Response.Cookies.Add(new HttpCookie("user",nick.Text));
-                       
+                        
+                        //create a cookie
+                        HttpCookie myCookie = new HttpCookie("myCookie");
+
+                        //Add key-values in the cookie
+                        myCookie.Values.Add("userid", nick.Text);
+
+                        //set cookie expiry date-time. Made it to last for next 12 hours.
+                        myCookie.Expires = DateTime.Now.AddHours(12);
+
+                        //Most important, write the cookie to client.
+                        Response.Cookies.Add(myCookie);
+
                         j = 1;
                     }
 
