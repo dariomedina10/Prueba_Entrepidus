@@ -19,8 +19,9 @@ namespace PROJECT_EMPLOYEES
 
                 Label1.Text = Label1.Text + "   " + Session["user"];
                 Label2.Visible = false;
+                Label4.Visible = false;
 
-             }
+            }
         }
 
 
@@ -44,6 +45,7 @@ namespace PROJECT_EMPLOYEES
                 db.SaveChanges();
                 Label2.Visible = true;
                 Label2.Text = "!!!Successfull Record!!!";
+                Label4.Text = "";
                 Limpiar();
             }
         }
