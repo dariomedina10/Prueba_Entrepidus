@@ -81,8 +81,8 @@ namespace PROJECT_EMPLOYEES
 
             catch (Exception ex)
             {
-                Label1.Visible = true;
-                Label1.Text = "Have problems adding employees" + ex.Message;
+                Label2.Visible = true;
+                Label2.Text = "Have problems adding employees" + ex.Message;
             }
 
             Label1.Text = "";
