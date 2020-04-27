@@ -17,11 +17,12 @@
                 <div class="form-row">
                         <div class="form-group col-md-6">
                             <center>
+                                  <h2> <asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label></h2> <a href="index.aspx" >Logout System</a>   <a href="Employees.aspx" >Volver Atras</a> <br />
                                 <%-- <p align="center">
                          <strong>Indentification Card</strong>
                         </p>--%>
                              <tr>
-                                 <td><asp:TextBox ID="name" placeholder="enter here identification card" CssClass="form-control" runat="server" Width="220" OnTextChanged="id_TextChanged" ></asp:TextBox>
+                                 <td><asp:TextBox ID="name" placeholder="enter here identification card" CssClass="form-control" runat="server" Width="220" ></asp:TextBox>
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="name" ErrorMessage="You must enter the user name" ForeColor="#CC0000"></asp:RequiredFieldValidator>   
                                  </td>
                                  <br />
