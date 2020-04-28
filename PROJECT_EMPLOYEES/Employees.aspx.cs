@@ -73,6 +73,7 @@ namespace PROJECT_EMPLOYEES
                 contract_date_from =Convert.ToDateTime (txtDate.Text),
                 date_of_birth  = txtDate2.Text,
                 freelace =flag,
+         
                 hourly_rate = Convert.ToDecimal (TextBox5.Text)
             };
 
@@ -144,34 +145,7 @@ namespace PROJECT_EMPLOYEES
             Calendar1.Visible = true;
             Label1.Text = "Welcome" + "   " + Session["user"];
 
-            //if (id.Text == "V-")
-            //{
-            //    id.Text = "";
-            //    id.Text = "V-";
-            //}else
-            //{
-            //    String tmp;
-            //    tmp = id.Text;
-            //    id.Text = "";
-            //    id.Text = tmp;
-            //}
-
-
-            //if (TextBox3.Text == "1234-")
-            //{
-            //    TextBox3.Text = "";
-            //    TextBox3.Text = "1234-";
-            //}
-            //else
-            //{
-            //    String tmp2;
-            //    tmp2 = TextBox3.Text;
-            //    TextBox3.Text = "";
-            //    TextBox3.Text = tmp2;
-            //}
-
-            //id.Text = id.Text;
-            //TextBox3.Text = TextBox3.Text;
+           
             
         }
 
