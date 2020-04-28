@@ -91,7 +91,7 @@ namespace PROJECT_EMPLOYEES
                              where e.identification_card.Contains(id)
                              select e).Single();
 
-                       db.DeleteObject(query);
+                      // db.DeleteObject(query);
                        db.SaveChanges();
                 //    }
 
