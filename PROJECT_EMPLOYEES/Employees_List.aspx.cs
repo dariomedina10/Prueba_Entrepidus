@@ -24,10 +24,27 @@ namespace PROJECT_EMPLOYEES
     } 
         public void Fill()
         {
-            //SELECT Titulo FROM dbo.EntradasBlog
-            //var selec = from e in sel.EntradasBlogs select e.Titulo;
-           // var query = db.employees e select new { identification_card= e.identification_card }.to;
+            using (db_employeesEntities2 db = new db_employeesEntities2())
+            {
 
+                try
+                {
+                    var query1 = (from e in db.employees
+                    select new
+          { e.identification_card, e.name, e.last_name, e.email }).ToList();
+                    GridView1.DataSource = query1;
+                    GridView1.DataBind();
+                }
+
+                catch (Exception ex)
+                {
+                    Response.Write (ex.Message);
+                }
+
+                //SELECT Titulo FROM dbo.EntradasBlog
+                //var selec = from e in sel.EntradasBlogs select e.Titulo;
+                // var query = db.employees e select new { identification_card= e.identification_card }.to;
+            }
         }
     }
 }
