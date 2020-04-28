@@ -39,16 +39,9 @@ namespace PROJECT_EMPLOYEES
                 catch (Exception ex)
                 {
                     Response.Write (ex.Message);
-                }
-
-                //SELECT Titulo FROM dbo.EntradasBlog
-                //var selec = from e in sel.EntradasBlogs select e.Titulo;
-                // var query = db.employees e select new { identification_card= e.identification_card }.to;
+                }               
             }
         }
-
-   
-     
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -66,18 +59,45 @@ namespace PROJECT_EMPLOYEES
             }
         }
 
-        //protected void GridView1_PageIndexChanged(object sender, EventArgs e)
-        //{
-        //    
-        //}
+        public void Update()
+        {
+            using (db_employeesEntities2 db = new db_employeesEntities2())
+            {
+            }
+        }
 
-        //protected void GridView1_PageIndexChanging((ByVal sender As Object, ByVal e As GridViewPageEventArgs)
-        //{
 
-        //    this.GridView1.PageIndex = e.NewPageIndex;
+        public void Delete()
+        {
+            using (db_employeesEntities2 db = new db_employeesEntities2())
+            {
+            }
+        }
 
-        //    this.GridView1.DataBind();
-        //}
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+            Fill();
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            Fill();
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            Fill();
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            Fill();
+        }
     }
 }
 
