@@ -46,6 +46,38 @@ namespace PROJECT_EMPLOYEES
                 // var query = db.employees e select new { identification_card= e.identification_card }.to;
             }
         }
+
+   
+     
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            try
+            {
+                GridView1.PageIndex = e.NewPageIndex;
+
+                GridView1.DataBind();
+
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        //protected void GridView1_PageIndexChanged(object sender, EventArgs e)
+        //{
+        //    
+        //}
+
+        //protected void GridView1_PageIndexChanging((ByVal sender As Object, ByVal e As GridViewPageEventArgs)
+        //{
+
+        //    this.GridView1.PageIndex = e.NewPageIndex;
+
+        //    this.GridView1.DataBind();
+        //}
     }
 }
 
