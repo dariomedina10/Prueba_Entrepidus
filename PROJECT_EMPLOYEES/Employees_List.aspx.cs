@@ -43,6 +43,62 @@ namespace PROJECT_EMPLOYEES
             }
         }
 
+
+        public void Update(String id, String name, String Last_name, String email)
+        {
+            int j = 0;
+            using (db_employeesEntities2 db = new db_employeesEntities2())
+            {
+
+                var query = (from e in db.employees
+                             where e.identification_card.Contains(id)
+                             select e);
+
+
+                foreach (var e in query)
+                {
+                    j = 1;
+                }
+
+
+     if (j == 1) {
+                    var emp = new employees()
+                    {
+                      
+                        name = name,
+                        last_name = Last_name,
+                        email = email
+                      
+                    };
+
+                    db.employees.Add(emp);
+                    db.SaveChanges();
+                }
+
+            }
+        }
+
+
+        public void Delete(String id)
+        {
+            int j = 0;
+            using (db_employeesEntities2 db = new db_employeesEntities2()) 
+          {
+
+
+
+                var query = (from e in db.employees
+                             where e.identification_card.Contains(id)
+                             select e).Single();
+
+                       db.DeleteObject(query);
+                       db.SaveChanges();
+                //    }
+
+            }
+
+        }
+
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             try
@@ -59,20 +115,7 @@ namespace PROJECT_EMPLOYEES
             }
         }
 
-        public void Update()
-        {
-            using (db_employeesEntities2 db = new db_employeesEntities2())
-            {
-            }
-        }
-
-
-        public void Delete()
-        {
-            using (db_employeesEntities2 db = new db_employeesEntities2())
-            {
-            }
-        }
+      
 
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
@@ -89,12 +132,21 @@ namespace PROJECT_EMPLOYEES
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+
+            GridViewRow row = GridView1.Rows[e.RowIndex];
+            string id = ((TextBox)(row.Cells[2].Controls[0])).Text ;
+            string name = ((TextBox)(row.Cells[3].Controls[0])).Text; ;
+            string lastname = ((TextBox)(row.Cells[4].Controls[0])).Text;
+            string email = ((TextBox)(row.Cells[5].Controls[0])).Text; ;
+            Update(id, name, lastname, email);
             GridView1.EditIndex = -1;
             Fill();
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            string id = GridView1.Rows[e.RowIndex].Cells[2].Text;
+            Delete(id);
             GridView1.EditIndex = -1;
             Fill();
         }

@@ -52,7 +52,7 @@ function Finalizar() {
                     <asp:Label ID="Label1" runat="server" ForeColor="#CC0000"></asp:Label>
                     <br />
                      <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Login" OnClick="Button1_Click"  />
-                <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Width="70" Text="Exit"  />
+                <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Width="70" Text="Exit" Visible="False"  />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     

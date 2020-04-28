@@ -27,5 +27,10 @@ namespace PROJECT_EMPLOYEES
     
         public virtual DbSet<employees> employees { get; set; }
         public virtual DbSet<users> users { get; set; }
+
+        internal void DeleteObject(employees query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
