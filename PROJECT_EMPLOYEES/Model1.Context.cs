@@ -12,6 +12,8 @@ namespace PROJECT_EMPLOYEES
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class db_employeesEntities2 : DbContext
     {
@@ -27,7 +29,43 @@ namespace PROJECT_EMPLOYEES
     
         public virtual DbSet<employees> employees { get; set; }
         public virtual DbSet<users> users { get; set; }
-
-      
+    
+        public virtual int delete_employees(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("delete_employees", idParameter);
+        }
+    
+        public virtual int update_employees(string id, string name, string last_name, string adress, string email, string phone)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var last_nameParameter = last_name != null ?
+                new ObjectParameter("last_name", last_name) :
+                new ObjectParameter("last_name", typeof(string));
+    
+            var adressParameter = adress != null ?
+                new ObjectParameter("adress", adress) :
+                new ObjectParameter("adress", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("update_employees", idParameter, nameParameter, last_nameParameter, adressParameter, emailParameter, phoneParameter);
+        }
     }
 }

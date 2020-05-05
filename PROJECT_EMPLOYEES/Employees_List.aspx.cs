@@ -85,7 +85,7 @@ namespace PROJECT_EMPLOYEES
             using (db_employeesEntities2 db = new db_employeesEntities2()) 
           {
 
-
+               // db.delete_employees(id);
 
                 var query = (from e in db.employees
                              where e.identification_card.Contains(id)
