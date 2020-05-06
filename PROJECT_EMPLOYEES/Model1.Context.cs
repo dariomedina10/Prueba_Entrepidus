@@ -39,7 +39,7 @@ namespace PROJECT_EMPLOYEES
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("delete_employees", idParameter);
         }
     
-        public virtual int update_employees(string id, string name, string last_name, string adress, string email, string phone)
+        public virtual int update_employees(string id, string name, string last_name, string email)
         {
             var idParameter = id != null ?
                 new ObjectParameter("id", id) :
@@ -53,19 +53,11 @@ namespace PROJECT_EMPLOYEES
                 new ObjectParameter("last_name", last_name) :
                 new ObjectParameter("last_name", typeof(string));
     
-            var adressParameter = adress != null ?
-                new ObjectParameter("adress", adress) :
-                new ObjectParameter("adress", typeof(string));
-    
             var emailParameter = email != null ?
                 new ObjectParameter("email", email) :
                 new ObjectParameter("email", typeof(string));
     
-            var phoneParameter = phone != null ?
-                new ObjectParameter("phone", phone) :
-                new ObjectParameter("phone", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("update_employees", idParameter, nameParameter, last_nameParameter, adressParameter, emailParameter, phoneParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("update_employees", idParameter, nameParameter, last_nameParameter, emailParameter);
         }
     }
 }

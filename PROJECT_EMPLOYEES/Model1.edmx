@@ -36,9 +36,7 @@
           <Parameter Name="id" Type="varchar" Mode="In" />
           <Parameter Name="name" Type="text" Mode="In" />
           <Parameter Name="last_name" Type="text" Mode="In" />
-          <Parameter Name="adress" Type="text" Mode="In" />
           <Parameter Name="email" Type="text" Mode="In" />
-          <Parameter Name="phone" Type="text" Mode="In" />
         </Function>
         <EntityContainer Name="db_employeesModelStoreContainer">
           <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
@@ -76,15 +74,13 @@
           <EntitySet Name="employees" EntityType="Self.employees" />
           <EntitySet Name="users" EntityType="Self.users" />
           <FunctionImport Name="delete_employees">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="update_employees">
             <Parameter Name="id" Mode="In" Type="String" />
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="last_name" Mode="In" Type="String" />
-            <Parameter Name="adress" Mode="In" Type="String" />
             <Parameter Name="email" Mode="In" Type="String" />
-            <Parameter Name="phone" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
       </Schema>

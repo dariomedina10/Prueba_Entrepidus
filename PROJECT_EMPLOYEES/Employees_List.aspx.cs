@@ -50,30 +50,33 @@ namespace PROJECT_EMPLOYEES
             using (db_employeesEntities2 db = new db_employeesEntities2())
             {
 
-                var query = (from e in db.employees
-                             where e.identification_card.Contains(id)
-                             select e);
+                db.update_employees(id, name, Last_name, email);
+                db.SaveChanges();
+
+                //var query = (from e in db.employees
+                //             where e.identification_card.Contains(id)
+                //             select e);
 
 
-                foreach (var e in query)
-                {
-                    j = 1;
-                }
+                //           foreach (var e in query)
+                //           {
+                //               j = 1;
+                //           }
 
 
-     if (j == 1) {
-                    var emp = new employees()
-                    {
-                      
-                        name = name,
-                        last_name = Last_name,
-                        email = email
-                      
-                    };
+                //if (j == 1) {
+                //               var emp = new employees()
+                //               {
 
-                    db.employees.Add(emp);
-                    db.SaveChanges();
-                }
+                //                   name = name,
+                //                   last_name = Last_name,
+                //                   email = email
+
+                //               };
+
+                //               db.employees.Add(emp);
+                //              
+                //           }
 
             }
         }
@@ -139,7 +142,7 @@ namespace PROJECT_EMPLOYEES
             string name = ((TextBox)(row.Cells[3].Controls[0])).Text; ;
             string lastname = ((TextBox)(row.Cells[4].Controls[0])).Text;
             string email = ((TextBox)(row.Cells[5].Controls[0])).Text; ;
-            Update(id, name, lastname, email);
+            Update(id, name, lastname,email );
             GridView1.EditIndex = -1;
             Fill();
         }
