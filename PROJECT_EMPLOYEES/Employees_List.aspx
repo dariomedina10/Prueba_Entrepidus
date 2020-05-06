@@ -13,10 +13,10 @@
         <div>
             <br />
             <center>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="3" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"  >
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="3" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  >
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:CommandField ShowEditButton="True" />
+                    <asp:CommandField ShowEditButton="True"  />
                     <asp:CommandField ShowDeleteButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />

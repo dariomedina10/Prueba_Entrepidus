@@ -85,14 +85,17 @@ namespace PROJECT_EMPLOYEES
             using (db_employeesEntities2 db = new db_employeesEntities2()) 
           {
 
-               // db.delete_employees(id);
+              
 
-                var query = (from e in db.employees
-                             where e.identification_card.Contains(id)
-                             select e).Single();
 
-                      // db.DeleteObject(query);
-                       db.SaveChanges();
+                db.delete_employees(id);
+
+                //var query = (from e in db.employees
+                //             where e.identification_card.Contains(id)
+                //             select e).Single();
+
+                // db.DeleteObject(query);
+                db.SaveChanges();
                 //    }
 
             }
@@ -144,10 +147,28 @@ namespace PROJECT_EMPLOYEES
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string id = GridView1.Rows[e.RowIndex].Cells[2].Text;
+
+          
+
             Delete(id);
             GridView1.EditIndex = -1;
             Fill();
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType == DataControlRowType.DataRow)
+        //    {
+        //        LinkButton Lb = 
+
+        //        Lb.Attributes.Add("onclick", "javascript:return confirm('¿Está seguro de que desea eliminar el registro con ID=" + DataBinder.Eval(e.Row.DataItem, "id") + "?')");
+        //    }
+        //}
     }
 }
 
