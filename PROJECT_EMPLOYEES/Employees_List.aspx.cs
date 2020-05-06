@@ -87,7 +87,7 @@ namespace PROJECT_EMPLOYEES
 
               
 
-
+              //implementing data access with entity framework and stores procedures  
                 db.delete_employees(id);
 
                 //var query = (from e in db.employees
@@ -157,6 +157,7 @@ namespace PROJECT_EMPLOYEES
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
 
         }
 
