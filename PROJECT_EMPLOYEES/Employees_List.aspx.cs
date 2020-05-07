@@ -48,7 +48,7 @@ namespace PROJECT_EMPLOYEES
         {
             int j = 0;
             using (db_employeesEntities2 db = new db_employeesEntities2())
-            {//
+            {
                 
                 db.update_employees(id, name, Last_name, email);
                 db.SaveChanges();
