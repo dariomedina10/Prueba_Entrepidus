@@ -164,6 +164,19 @@ namespace PROJECT_EMPLOYEES
 
         }
 
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            // LinkButton objDelete = e.Row.Cells[2].Controls[0] as LinkButton; objDelete.Attributes.Add("onclick", "javascript:return confirm('Do you want to delete this item?');");
+
+        //    if (e.Row.RowType == DataControlRowType.DataRow)
+        ////    {
+        //   LinkButton Lb = 
+
+        //           Lb.Attributes.Add("onclick", "javascript:return confirm('¿Está seguro de que desea eliminar el registro con ID=" + DataBinder.Eval(e.Row.DataItem, "id") + "?')");
+        //       }
+
+        }
+
         //protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         //{
         //    if (e.Row.RowType == DataControlRowType.DataRow)
